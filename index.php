@@ -2,7 +2,7 @@
 if($conn){
 	echo 'done';
 }
-
+?>
 
 <!DOCTYPE html>
 <html>
