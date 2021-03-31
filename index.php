@@ -10,7 +10,7 @@
     $rs= pg_query($conn, $sql);
 	 echo $rs;
 $user = pg_fetch_assoc($rs);
-	 echo $user
+	 echo $user;
 	 header('Location:chucmung.php');
 
   }else{
