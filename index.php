@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $user = pg_fetch_assoc($rs);
   if($user){
   	echo 'success';
-  	header('chucmung.php');
+  	header('location: chucmung.php');
 
   }else{
   	echo 'error';
