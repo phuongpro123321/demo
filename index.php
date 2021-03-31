@@ -2,19 +2,7 @@
 if($conn){
 	echo 'done';
 }
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-    $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
-    $rs= pg_query($conn, $sql);
-  $user = pg_fetch_assoc($rs);
-  	echo 'success';
-  	header('location:chucmung.php');
 
-
-
-} ?>
 
 <!DOCTYPE html>
 <html>
