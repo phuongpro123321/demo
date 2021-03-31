@@ -1,8 +1,8 @@
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 include('conn.php');
-  $username = $_POST[''];
+  $username = $_POST['username'];
   $password = $_POST['pass'];
-    $sql="SELECT * FROM user WHERE username ='{$username}' and password='{$password}'";
+    $sql="SELECT * FROM account WHERE username ='{$username}' and password='{$password}'";
     $rs= mysqli_query($conn, $sql);
   $user = mysqli_fetch_assoc($rs);
   if($user){
@@ -56,7 +56,7 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password" name="password">
+						<input type="password" class="form-control" placeholder="password" name="pass">
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
