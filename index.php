@@ -1,5 +1,6 @@
-<?php if($_SERVER['REQUEST_METHOD'] == 'POST'){
-	 include('conn.php');
+<?php   include('conn.php');
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+	
   $username = $_POST['username'];
   $password = $_POST['password'];
     $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
