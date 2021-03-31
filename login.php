@@ -1,7 +1,7 @@
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	 include('conn.php');
-  $username = $_POST[''];
-  $password = $_POST['pass'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
     $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
     $rs= pg_query($conn, $sql);
   $user = pg_fetch_assoc($rs);
