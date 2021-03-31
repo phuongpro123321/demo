@@ -12,9 +12,11 @@ if (!$result) {
 }
 
 while ($row = pg_fetch_row($result)) {
-  echo "name: $row[2]  pass: $row[3]";
+  echo "name: $row[1]  pass: $row[2]";
   echo "<br />\n";
 }
+	header('Location:chucmung.php');
+	 
 
   }else{
 	 echo '\n login status : false';
