@@ -3,12 +3,9 @@
   	if($conn){echo 'done';}
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-$username = $_POST['username'];
-  $password = $_POST['pass'];
-    $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
-    $rs= pg_query($conn, $sql);
-$user = pg_fetch_assoc($rs);
+
 	 echo	$user;
+	 echo 'done2';
 
   }
  ?>
