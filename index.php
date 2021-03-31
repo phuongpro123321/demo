@@ -7,7 +7,7 @@
 	 echo $username;
 	 echo $password;
     $sql="SELECT * FROM account WHERE username ='$username' and pass='$password'";
-	$result = pg_query($conn, "SELECT * FROM account WHERE username ='$username' and pass='$password'");
+	$result = pg_query($conn, "SELECT * FROM account WHERE user_name ='$username' and pass='$password'");
 if (!$result) {
   echo "An error occurred.\n";
   exit;
