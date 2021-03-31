@@ -4,8 +4,6 @@
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
   $password = $_POST['password'];
-	 echo $username;
-	 echo $password;
     $sql="SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
 	$result = pg_query($conn, $sql);
 if (!$result) {
