@@ -1,25 +1,25 @@
 <?php	 
  $conn = pg_connect("host=ec2-23-22-191-232.compute-1.amazonaws.com dbname=ddpnh3fllikoh9 user=qlacuryvjwfagg password=2b902a01a3f536a9bc5398855594f01f3b6932ee4df7906b980e69d3726c4715 port=5432");
-  	if($conn){echo 'done';}
+  	if($conn){echo 'status : connected';}
  if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$username = $_POST['username'];
   $password = $_POST['password'];
 	 echo $username;
 	 echo $password;
-    $sql="SELECT * FROM account WHERE username ='$username' and pass='$password'";
-	$result = pg_query($conn, "SELECT * FROM account WHERE user_name ='$username' and pass='$password'");
+    $sql="SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
+	$result = pg_query($conn, $sql);
 if (!$result) {
   echo "An error occurred.\n";
   exit;
 }
 
 while ($row = pg_fetch_row($result)) {
-  echo "name: $row[0]  ass: $row[1]";
+  echo "name: $row[2]  pass: $row[3]";
   echo "<br />\n";
 }
 
   }else{
-	 echo 'false';
+	 echo '\n login status : false';
  }
  ?>
 
