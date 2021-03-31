@@ -9,13 +9,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
     $rs= pg_query($conn, $sql);
   $user = pg_fetch_assoc($rs);
-  if($user){
   	echo 'success';
   	header('location:chucmung.php');
 
-  }else{
-  	echo 'error';
-  }
+
+
 } ?>
 
 <!DOCTYPE html>
