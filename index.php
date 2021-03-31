@@ -10,7 +10,7 @@ $username = $_POST['username'];
   $user = pg_fetch_assoc($rs);
 
   }
-} ?>
+ ?>
 
 <!DOCTYPE html>
 <html>
