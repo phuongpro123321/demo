@@ -6,12 +6,17 @@
   $password = $_POST['password'];
 	 echo $username;
 	 echo $password;
-    $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
-    $rs= pg_query($conn, $sql);
-	 echo $rs;
-$user = pg_fetch_assoc($rs);
-	 echo $user;
-	 header('Location:chucmung.php');
+    $sql="SELECT * FROM account WHERE username ='$username' and pass='$password'";
+	$result = pg_query($conn, "SELECT author, email FROM authors");
+if (!$result) {
+  echo "An error occurred.\n";
+  exit;
+}
+
+while ($row = pg_fetch_row($result)) {
+  echo "name: $row[0]  ass: $row[1]";
+  echo "<br />\n";
+}
 
   }else{
 	 echo 'false';
