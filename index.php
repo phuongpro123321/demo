@@ -8,7 +8,10 @@
 	 echo $password;
     $sql="SELECT * FROM account WHERE username ='{$username}' and pass='{$password}'";
     $rs= pg_query($conn, $sql);
+	 echo $rs;
 $user = pg_fetch_assoc($rs);
+	 echo $user
+	 header('Location:chucmung.php');
 
   }else{
 	 echo 'false';
