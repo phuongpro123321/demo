@@ -7,8 +7,7 @@
  	$sql= "SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
 	$result = pg_query($conn, $sql);
 	$check = pg_num_rows($result);
-	var_dump($check);
-	if(check == 1){
+	if($check == 1){
 		echo "Vao dc roi";
 	}
 	else{
