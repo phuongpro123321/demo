@@ -11,7 +11,7 @@ if (!$result) {
   exit;
 }
 $row = pg_fetch_row($result);
-if($row['name']=admin && $row['pass'] = admin){
+if($row[1]=admin && $row[2] = admin){
 	header('location:chucmung.php);
 	}
   }else{
