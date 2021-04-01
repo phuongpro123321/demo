@@ -9,6 +9,7 @@
 	$check = pg_num_rows($result);
 	if($check == 1){
 		echo "Vao dc roi";
+		header("Location:chucmung.php");
 	}
 	else{
 		echo "Ngu vl";
