@@ -15,7 +15,7 @@ while ($row = pg_fetch_row($result)) {
   echo "name: $row[1]  pass: $row[2]";
   echo "<br />\n";
 }
-	header('Location:chucmung.php');
+	
 	 
 
   }else{
