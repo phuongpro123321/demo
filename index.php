@@ -10,10 +10,8 @@ if (!$result) {
   echo "An error occurred.\n";
   exit;
 }
-while ($row = pg_fetch_row($result)) {
-  echo "name: $row[1]  pass: $row[2]";
-  echo "<br />\n";
-}
+$row = pg_fetch_row($result);
+echo $row;
 echo 'heloo';
   }else{
 	 echo ' login status : false';
