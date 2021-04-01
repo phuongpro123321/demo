@@ -6,22 +6,18 @@
  	$password = $_POST['password'];
  	$sql="SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
 	$result = pg_query($conn, $sql);
+if($result){header('location:chucmung.php')}
 if (!$result) {
   echo "An error occurred.\n";
   exit;
-}else{
-	header('Locaion:chucmung.php');
 }
-
 while ($row = pg_fetch_row($result)) {
   echo "name: $row[1]  pass: $row[2]";
   echo "<br />\n";
 }
-	
-	 
 
   }else{
-	 echo '\n login status : false';
+	 echo ' login status : false';
  }
  ?>
 
