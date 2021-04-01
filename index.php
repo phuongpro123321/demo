@@ -8,7 +8,7 @@
 	$result = pg_query($conn, $sql);
 	$check = pg_num_rows($result);
 	if(check == 1){
-		header("Location:chucmung.php");
+		echo "Vao dc roi";
 	}
 	else{
 		echo "Ngu vl";
