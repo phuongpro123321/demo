@@ -1,22 +1,20 @@
 <?php	 
  $conn = pg_connect("host=ec2-23-22-191-232.compute-1.amazonaws.com dbname=ddpnh3fllikoh9 user=qlacuryvjwfagg password=2b902a01a3f536a9bc5398855594f01f3b6932ee4df7906b980e69d3726c4715 port=5432");
-  	if($conn){echo 'status : connected';}
- if($_SERVER['REQUEST_METHOD'] == 'POST'){
+  	if(!$conn){echo "Loi ket noi";}
+ if(isset($_POST['login'])){
 	$username = $_POST['username'];
  	$password = $_POST['password'];
  	$sql="SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
 	$result = pg_query($conn, $sql);
-if (!$result) {
-  echo "An error occurred.\n";
-  exit;
-}
-$row = pg_fetch_row($result);
-if($row[1]=admin && $row[2] = admin){
-	header('location:chucmung.php);
+	$check = pg_num_rows($result);
+	if(check == 1){
+		header("Location:chucmung.php");
 	}
-  }else{
-	 echo ' login status : false';
- }
+	else{
+		echo "Ngu vl";
+	}
+		
+
  ?>
 
 <!DOCTYPE html>
@@ -47,7 +45,7 @@ if($row[1]=admin && $row[2] = admin){
 			<input type="text" name="username">
 			<label>password</label>
 			<input type="password" name="password">
-			<input type="submit" value="login">
+			<input name="login" type="submit" value="login">
 		</div>
 		</form>
 	</div>
