@@ -9,6 +9,8 @@
 if (!$result) {
   echo "An error occurred.\n";
   exit;
+}else{
+	header('Locaion:chucmung.php')
 }
 
 while ($row = pg_fetch_row($result)) {
