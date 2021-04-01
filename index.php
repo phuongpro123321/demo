@@ -4,9 +4,10 @@
  if(isset($_POST['login'])){
 	$username = $_POST['username'];
  	$password = $_POST['password'];
- 	$sql="SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
+ 	$sql= "SELECT * FROM account WHERE user_name ='$username' and pass='$password'";
 	$result = pg_query($conn, $sql);
 	$check = pg_num_rows($result);
+	var_dump($check);
 	if(check == 1){
 		echo "Vao dc roi";
 	}
@@ -40,14 +41,14 @@
 		<div class="card">
 			<h3>Sign In</h3>
 		</div>
-		<form method="POST">
-		<div class="card-body">
-			<label>username</label>
-			<input type="text" name="username">
-			<label>password</label>
-			<input type="password" name="password">
-			<button name="login" type="submit" value="login"></button>
-		</div>
+		<form method="post">
+			<div class="card-body">
+				<label>username</label>
+				<input type="text" name="username">
+				<label>password</label>
+				<input type="password" name="password">
+				<button name="login" type="submit" value="login">Login</button>
+			</div>
 		</form>
 	</div>
 </body>
